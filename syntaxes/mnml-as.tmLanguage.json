@@ -1,0 +1,67 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "mnml Assembly",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.number-sign",
+			"match": "#.*?$"
+		},
+		"keywords": {
+			"name": "keyword.control.mnml-as",
+			"match": "\\b(psh|pop|nip|swp|ovr|dup|rot|inc|dec|add|sub|mul|div|not|and|oor|xor|sll|srl|equ|neq|slt|sgt|sle|sge|jmp|jal|bra|ldw|stw|drx|dtx)\\b"
+		},
+		"labels": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "\\@[^\\s]+"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\&[^\\s]+"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "0x\\h+"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "\\d+"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.mnml-as",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mnml-as",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.as"
+}

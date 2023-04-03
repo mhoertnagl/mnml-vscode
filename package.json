@@ -1,0 +1,25 @@
+{
+  "name": "mnml-assembly-language-support",
+  "displayName": "mnml Assembly Language Support",
+  "description": "Syntax highlighting for mnml assembly",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mnml-as",
+      "aliases": ["mnml Assembly", "mnml-as"],
+      "extensions": [".as"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mnml-as",
+      "scopeName": "source.as",
+      "path": "./syntaxes/mnml-as.tmLanguage.json"
+    }]
+  }
+}
